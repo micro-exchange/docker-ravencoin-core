@@ -18,7 +18,7 @@ RUN mkdir -p ${BERKELEYDB_PREFIX}
 WORKDIR /${BERKELEYDB_VERSION}/build_unix
 
 RUN ../dist/configure --enable-cxx --disable-shared --with-pic --prefix=${BERKELEYDB_PREFIX}
-RUN make -j4
+RUN make -j`nproc`
 RUN make install
 RUN rm -rf ${BERKELEYDB_PREFIX}/docs
 
@@ -42,12 +42,12 @@ RUN apt-get install -y python3
 
 COPY --from=berkeleydb /opt /opt
 
-ENV RAVENCOIN_VERSION=4.3
+ENV RAVENCOIN_VERSION=4.3.2.1
 ENV RAVENCOIN_PREFIX=/opt/ravencoin-${RAVENCOIN_VERSION}
 
 RUN git clone https://github.com/RavenProject/Ravencoin.git /ravencoin-${RAVENCOIN_VERSION} \
     && cd /ravencoin-${RAVENCOIN_VERSION} \
-    && git checkout 25a2dbf4166740270f3ade327aa09ea35ba4e2b2
+    && git checkout v${RAVENCOIN_VERSION}
 
 WORKDIR /ravencoin-${RAVENCOIN_VERSION}
 
@@ -66,7 +66,7 @@ RUN ./configure LDFLAGS=-L`ls -d /opt/db*`/lib/ CPPFLAGS=-I`ls -d /opt/db*`/incl
     --with-utils \
     --with-libs \
     --with-daemon
-RUN make -j4
+RUN make -j`nproc`
 RUN make install
 RUN strip ${RAVENCOIN_PREFIX}/bin/raven-cli
 # RUN strip ${RAVENCOIN_PREFIX}/bin/ravencoin-tx
@@ -87,7 +87,7 @@ RUN apt-get install -y curl
 RUN useradd -r ravencoin
 
 ENV RAVENCOIN_DATA=/home/ravencoin/.ravencoin
-ENV RAVENCOIN_VERSION=4.3
+ENV RAVENCOIN_VERSION=4.3.2.1
 ENV RAVENCOIN_PREFIX=/opt/ravencoin-${RAVENCOIN_VERSION}
 ENV PATH=${RAVENCOIN_PREFIX}/bin:$PATH
 

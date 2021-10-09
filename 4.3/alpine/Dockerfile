@@ -43,7 +43,7 @@ RUN apk --no-cache add zeromq-dev
 RUN apk --no-cache add git
 RUN apk --no-cache add openssl-dev
 
-ENV RAVENCOIN_VERSION=4.3
+ENV RAVENCOIN_VERSION=4.3.2.1
 ENV RAVENCOIN_PREFIX=/opt/ravencoin-${RAVENCOIN_VERSION}
 
 RUN git clone https://github.com/ravencoin-project/ravencoin.git /ravencoin-${RAVENCOIN_VERSION} \
@@ -88,7 +88,7 @@ RUN apk --no-cache add \
   su-exec
 
 ENV RAVENCOIN_DATA=/home/ravencoin/.ravencoin
-ENV RAVENCOIN_VERSION=4.3
+ENV RAVENCOIN_VERSION=4.3.2.1
 ENV RAVENCOIN_PREFIX=/opt/ravencoin-${RAVENCOIN_VERSION}
 ENV PATH=${RAVENCOIN_PREFIX}/bin:$PATH
 
