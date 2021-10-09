@@ -46,7 +46,7 @@ RUN apk --no-cache add openssl-dev
 ENV RAVENCOIN_VERSION=4.3.2.1
 ENV RAVENCOIN_PREFIX=/opt/ravencoin-${RAVENCOIN_VERSION}
 
-RUN git clone https://github.com/ravencoin-project/ravencoin.git /ravencoin-${RAVENCOIN_VERSION} \
+RUN git clone https://github.com/RavenProject/Ravencoin.git /ravencoin-${RAVENCOIN_VERSION} \
     && cd /ravencoin-${RAVENCOIN_VERSION} \
     && git checkout v${RAVENCOIN_VERSION}
 
