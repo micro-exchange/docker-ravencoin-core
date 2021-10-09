@@ -71,8 +71,8 @@ RUN make install
 RUN strip ${RAVENCOIN_PREFIX}/bin/raven-cli
 #RUN strip ${RAVENCOIN_PREFIX}/bin/raven-tx
 RUN strip ${RAVENCOIN_PREFIX}/bin/ravend
-#RUN strip ${RAVENCOIN_PREFIX}/lib/libravencoinconsensus.a
-#RUN strip ${RAVENCOIN_PREFIX}/lib/libravencoinconsensus.so.0.0.0
+RUN strip ${RAVENCOIN_PREFIX}/lib/libravenconsensus.a
+RUN strip ${RAVENCOIN_PREFIX}/lib/libravenconsensus.so.0.0.0
 
 # Build stage for compiled artifacts
 FROM alpine

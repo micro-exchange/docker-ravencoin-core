@@ -8,11 +8,13 @@ A Ravencoin Core docker image.
 
 - `4.3`, `4.3.2`, `4.3.2.1`, `latest` ([4.3/Dockerfile](https://github.com/micro-exchange/docker-ravencoin-core/blob/master/4.3/Dockerfile)) (from master - last commit: [25a2db](https://github.com/RavenProject/Ravencoin/commit/25a2dbf4166740270f3ade327aa09ea35ba4e2b2))
 - `4.3-alpine`, `4.3.2-alpine` ([4.3/alpine/Dockerfile](https://github.com/micro-exchange/docker-ravencoin-core/blob/master/4.3/alpine/Dockerfile)) (from master - last commit: [25a2db](https://github.com/RavenProject/Ravencoin/commit/25a2dbf4166740270f3ade327aa09ea35ba4e2b2))
-- 
+
 **Picking the right tag**
 
 - `microexchange/ravencoin-core:latest`: points to the latest stable release available of Ravencoin Core. Use this only if you know what you're doing as upgrading Ravencoin Core blindly is a risky procedure.
+- `microexchange/ravencoin-core:alpine`: same as above but using the Alpine Linux distribution (a resource efficient Linux distribution with security in mind, but not officially supported by the Ravencoin Core team — use at your own risk).
 - `microexchange/ravencoin-core:<version>`: based on a Ubuntu image, points to a specific version branch or release of Ravencoin Core. Uses the pre-compiled binaries which are fully tested by the Ravencoin Core team.
+- `microexchange/ravencoin-core:<version>-alpine`: same as above but using the Alpine Linux distribution.
 
 ## What is Ravencoin Core?
 
