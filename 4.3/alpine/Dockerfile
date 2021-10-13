@@ -80,9 +80,11 @@ FROM alpine
 RUN adduser -S ravencoin
 RUN sed -i 's/http\:\/\/dl-cdn.alpinelinux.org/https\:\/\/alpine.global.ssl.fastly.net/g' /etc/apk/repositories
 RUN apk --no-cache add \
+  boost-chrono \
   boost-filesystem \
   boost-system \
   boost-thread \
+  boost-program_options \
   libevent \
   libzmq \
   su-exec
@@ -99,8 +101,10 @@ VOLUME ["/home/ravencoin/.ravencoin"]
 
 EXPOSE 8757 18757 8756 18756 
 
+RUN ["chmod", "+x", "/entrypoint.sh"]
+
 ENTRYPOINT ["/entrypoint.sh"]
 
-RUN ravend -version | grep "Raven Core version v${RAVENCOIN_VERSION}"
+RUN ravend -version | grep "Raven Core Daemon version v${RAVENCOIN_VERSION}"
 
 CMD ["ravend"]

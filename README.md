@@ -6,8 +6,8 @@ A Ravencoin Core docker image.
 
 ## Tags
 
-- `4.3`, `4.3.2`, `4.3.2.1`, `latest` ([4.3/Dockerfile](https://github.com/micro-exchange/docker-ravencoin-core/blob/master/4.3/Dockerfile)) (from master - last commit: [25a2db](https://github.com/RavenProject/Ravencoin/commit/25a2dbf4166740270f3ade327aa09ea35ba4e2b2))
-- `4.3-alpine`, `4.3.2-alpine` ([4.3/alpine/Dockerfile](https://github.com/micro-exchange/docker-ravencoin-core/blob/master/4.3/alpine/Dockerfile)) (from master - last commit: [25a2db](https://github.com/RavenProject/Ravencoin/commit/25a2dbf4166740270f3ade327aa09ea35ba4e2b2))
+- `4.3`, `4.3.2`, `4.3.2.1`, `latest` ([4.3/Dockerfile](https://github.com/micro-exchange/docker-ravencoin-core/blob/master/4.3/Dockerfile))
+- `4.3-alpine`, `4.3.2-alpine` ([4.3/alpine/Dockerfile](https://github.com/micro-exchange/docker-ravencoin-core/blob/master/4.3/alpine/Dockerfile))
 
 **Picking the right tag**
 
